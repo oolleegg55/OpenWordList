@@ -5,13 +5,15 @@ VisualStudioVersion = 17.11.34929.205
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Owl.Domain", "src\Owl.Domain\Owl.Domain.csproj", "{9F4B4E23-613D-4B79-8F83-4E31E239ECBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owl.Application", "src\Owl.Application\Owl.Application.csproj", "{5292AA13-E6D4-40A0-BC76-C9CEAA265C0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Owl.Application", "src\Owl.Application\Owl.Application.csproj", "{5292AA13-E6D4-40A0-BC76-C9CEAA265C0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owl.Infrastructure", "src\Owl.Infrastructure\Owl.Infrastructure.csproj", "{828F8625-1F1C-434F-9F83-C6257F20843B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Owl.Infrastructure", "src\Owl.Infrastructure\Owl.Infrastructure.csproj", "{828F8625-1F1C-434F-9F83-C6257F20843B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2F6DC74D-5EBF-45F0-B59E-D12C87A5AAEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owl.Application.Tests", "tests\Owl.Application.Tests\Owl.Application.Tests.csproj", "{932F23F1-0FAE-49AC-9C1A-122C07782AFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Owl.Application.Tests", "tests\Owl.Application.Tests\Owl.Application.Tests.csproj", "{932F23F1-0FAE-49AC-9C1A-122C07782AFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owl.WpfApp", "src\Owl.WpfApp\Owl.WpfApp.csproj", "{C0E1A3FA-4269-4B6A-9F9F-25748C3AECB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{932F23F1-0FAE-49AC-9C1A-122C07782AFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{932F23F1-0FAE-49AC-9C1A-122C07782AFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{932F23F1-0FAE-49AC-9C1A-122C07782AFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0E1A3FA-4269-4B6A-9F9F-25748C3AECB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E1A3FA-4269-4B6A-9F9F-25748C3AECB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E1A3FA-4269-4B6A-9F9F-25748C3AECB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E1A3FA-4269-4B6A-9F9F-25748C3AECB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
