@@ -3,6 +3,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using Owl.WpfApp.Windows.CreateNewWordList;
 using Owl.WpfApp.Windows.Main;
 
 namespace Owl.WpfApp;
@@ -16,8 +17,13 @@ public partial class App : Application
         _host = Host.CreateDefaultBuilder()
             .ConfigureServices((context, services) =>
             {
+                services.AddTransient<ViewModelFactory>();
+                services.AddTransient<WindowManager>();
+
                 services.AddTransient<MainWindow>();
                 services.AddTransient<MainVm>();
+
+                services.AddTransient<CreateNewWordListWindow>();
             })
             .Build();
     }

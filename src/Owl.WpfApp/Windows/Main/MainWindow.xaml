@@ -9,11 +9,12 @@
         Width="800"
         Height="450"
         x:ClassModifier="internal"
+        d:DataContext="{d:DesignInstance {x:Type local:MainVm}}"
         mc:Ignorable="d">
     <DockPanel>
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar>
-                <Button Command="{Binding CreateWordListCommand}" Content="New Word List" />
+                <Button Command="{Binding CreateNewWordListCommand}" Content="New Word List" />
             </ToolBar>
         </ToolBarTray>
         <Grid>
@@ -30,6 +31,11 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
+            <Grid Grid.Column="1" DataContext="{Binding WordListDetails}">
+                <StackPanel>
+                    <TextBlock Text="{Binding WordListId}" />
+                </StackPanel>
+            </Grid>
         </Grid>
     </DockPanel>
 </Window>
