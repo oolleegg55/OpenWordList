@@ -1,0 +1,10 @@
+{
+  "__schemaVersion": 1,
+  "value": "Hello, World!",
+  "languageCode": "en",
+  "description": "A simple hello world example.",
+  "translation": {
+    "value": "Привет, мир!",
+    "languageCode": "ru"
+  }
+}
