@@ -14,6 +14,5 @@ internal abstract class BaseViewModel : ObservableObject
 
     internal void InitializeWithParameters(IDictionary<string, object> parameters)
     {
-        throw new NotImplementedException();
     }
 }

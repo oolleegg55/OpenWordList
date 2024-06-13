@@ -24,6 +24,7 @@ public partial class App : Application
                 services.AddTransient<MainVm>();
 
                 services.AddTransient<CreateNewWordListWindow>();
+                services.AddTransient<CreateNewWordListVm>();
             })
             .Build();
     }
