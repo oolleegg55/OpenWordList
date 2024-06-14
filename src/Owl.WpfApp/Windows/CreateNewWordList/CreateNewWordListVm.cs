@@ -1,30 +1,25 @@
-﻿using System.Diagnostics;
-
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
 namespace Owl.WpfApp.Windows.CreateNewWordList;
 
-internal partial class CreateNewWordListVm : BaseViewModel
+internal partial class CreateNewWordListVm : WindowViewModelBase
 {
-    public override void OnInitialized()
-    {
-    }
+    public bool IsCanceled { get; private set; }
 
     [ObservableProperty]
     private string _name = string.Empty;
 
     [RelayCommand]
-    private Task CreateAsync()
+    private void Create()
     {
-        Debug.WriteLine("CreateAsync");
-        return Task.CompletedTask;
+        Window.Close();
     }
 
     [RelayCommand]
     private void Cancel()
     {
-        Debug.WriteLine("Cancel");
-        Window?.Close();
+        IsCanceled = true;
+        Window.Close();
     }
 }

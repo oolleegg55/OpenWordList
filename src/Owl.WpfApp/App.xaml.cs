@@ -3,6 +3,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using Owl.WpfApp.Navigation;
 using Owl.WpfApp.Windows.CreateNewWordList;
 using Owl.WpfApp.Windows.Main;
 
@@ -18,7 +19,7 @@ public partial class App : Application
             .ConfigureServices((context, services) =>
             {
                 services.AddTransient<ViewModelFactory>();
-                services.AddTransient<WindowManager>();
+                services.AddTransient<NavigationManager>();
 
                 services.AddTransient<MainWindow>();
                 services.AddTransient<MainVm>();
@@ -33,6 +34,9 @@ public partial class App : Application
     {
         base.OnStartup(e);
         _host.Start();
+
+        var navigationManager = _host.Services.GetRequiredService<NavigationManager>();
+        navigationManager.RegisterRoute(Routes.CreateNewWordList, typeof(CreateNewWordListWindow));
 
         var mainWindow = _host.Services.GetRequiredService<MainWindow>();
         MainWindow = mainWindow;

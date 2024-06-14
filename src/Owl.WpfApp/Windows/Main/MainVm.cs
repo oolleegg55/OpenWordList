@@ -3,22 +3,23 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
+using Owl.WpfApp.Navigation;
 using Owl.WpfApp.Windows.CreateNewWordList;
 using Owl.WpfApp.Windows.Main.Parts;
 
 namespace Owl.WpfApp.Windows.Main;
 
-internal partial class MainVm : BaseViewModel, IDisposable
+internal partial class MainVm : WindowViewModelBase, IDisposable
 {
     private readonly ViewModelFactory _viewModelFactory;
-    private readonly WindowManager _windowManager;
+    private readonly NavigationManager _navigationManager;
 
     private readonly Dictionary<Guid, WordListItemDetailsVm> _wordListDetailsCache = new();
 
-    public MainVm(ViewModelFactory viewModelFactory, WindowManager windowManager)
+    public MainVm(ViewModelFactory viewModelFactory, NavigationManager navigationManager)
     {
         _viewModelFactory = viewModelFactory;
-        _windowManager = windowManager;
+        _navigationManager = navigationManager;
     }
 
     public override void OnInitialized()
@@ -58,7 +59,8 @@ internal partial class MainVm : BaseViewModel, IDisposable
     [RelayCommand]
     private async Task CreateNewWordListAsync()
     {
-        await _windowManager.OpenWindowAsync<CreateNewWordListWindow>(Window);
+        var result = await _navigationManager.GoToWithResultAsync<CreateNewWordListResult>(
+            Routes.CreateNewWordList, new Dictionary<string, object>(), Window);
     }
 
     public void Dispose()
