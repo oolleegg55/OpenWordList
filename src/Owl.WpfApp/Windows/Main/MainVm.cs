@@ -61,6 +61,13 @@ internal partial class MainVm : WindowViewModelBase, IDisposable
     {
         var result = await _navigationManager.GoToWithResultAsync<CreateNewWordListResult>(
             Routes.CreateNewWordList, new Dictionary<string, object>(), Window);
+
+        if (result.IsCanceled)
+        {
+            return;
+        }
+
+
     }
 
     public void Dispose()

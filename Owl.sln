@@ -13,7 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2F6DC74D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Owl.Application.Tests", "tests\Owl.Application.Tests\Owl.Application.Tests.csproj", "{932F23F1-0FAE-49AC-9C1A-122C07782AFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owl.WpfApp", "src\Owl.WpfApp\Owl.WpfApp.csproj", "{C0E1A3FA-4269-4B6A-9F9F-25748C3AECB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Owl.WpfApp", "src\Owl.WpfApp\Owl.WpfApp.csproj", "{C0E1A3FA-4269-4B6A-9F9F-25748C3AECB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owl.WpfApp.UnitTests", "tests\Owl.WpfApp.UnitTests\Owl.WpfApp.UnitTests.csproj", "{2DD6E0C5-E038-434F-B28E-136A4761E9EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,12 +43,17 @@ Global
 		{C0E1A3FA-4269-4B6A-9F9F-25748C3AECB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0E1A3FA-4269-4B6A-9F9F-25748C3AECB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0E1A3FA-4269-4B6A-9F9F-25748C3AECB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DD6E0C5-E038-434F-B28E-136A4761E9EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DD6E0C5-E038-434F-B28E-136A4761E9EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DD6E0C5-E038-434F-B28E-136A4761E9EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DD6E0C5-E038-434F-B28E-136A4761E9EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{932F23F1-0FAE-49AC-9C1A-122C07782AFB} = {2F6DC74D-5EBF-45F0-B59E-D12C87A5AAEE}
+		{2DD6E0C5-E038-434F-B28E-136A4761E9EE} = {2F6DC74D-5EBF-45F0-B59E-D12C87A5AAEE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D5D13D14-7D5D-446E-95A7-6F44721540F5}
