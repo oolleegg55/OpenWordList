@@ -1,5 +1,5 @@
 ﻿namespace Owl.Application.ViewModels;
 
-public record class WordInfo(
-    Guid Id,
+public record class CreateWordRequest(
+    Guid WordListId,
     string Value);
