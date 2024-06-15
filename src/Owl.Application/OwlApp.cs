@@ -14,15 +14,17 @@ public class OwlApp
         _wordListRepository = wordListRepository;
     }
 
-    public async Task<WordListFullInfo> GetFullWordListAsync(Guid id)
+    public async Task<WordListInfo> GetFullWordListAsync(Guid id)
     {
         var wordList = await _wordListRepository.GetWordListAsync(id);
-        return new WordListFullInfo(wordList.Id, wordList.Name);
+        return new WordListInfo(wordList.Id, wordList.Name, []);
     }
 
-    public async Task<WordList> CreateWordListAsync(string name)
+    public async Task<WordListInfo> CreateWordListAsync(string name)
     {
-        var newWordList = new WordList { Name = name };
-        return await _wordListRepository.CreateWordListAsync(newWordList);
+        var wordList = new WordList { Name = name };
+        await _wordListRepository.CreateWordListAsync(wordList);
+
+        return new WordListInfo(wordList.Id, wordList.Name, []);
     }
 }
