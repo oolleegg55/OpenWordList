@@ -1,11 +1,12 @@
 ﻿using System.Collections.Immutable;
 
-using Owl.Application.ViewModels;
+using Owl.CoreApplication.ViewModels;
 using Owl.Domain;
+using Owl.Domain.Specifications;
 
-namespace Owl.Application;
+namespace Owl.CoreApplication;
 
-public class OwlApp
+public class OwlCoreAppApi
 {
     private readonly IWordListRepository _wordListRepository;
     private readonly IWordRepository _wordRepository;
@@ -13,7 +14,7 @@ public class OwlApp
     private readonly IWordListFactory _wordListFactory;
     private readonly IWordFactory _wordFactory;
 
-    public OwlApp(
+    public OwlCoreAppApi(
         IWordListRepository wordListRepository,
         IWordRepository wordRepository,
         IWordListFactory wordListFactory,
@@ -24,6 +25,23 @@ public class OwlApp
 
         _wordListFactory = wordListFactory;
         _wordFactory = wordFactory;
+    }
+
+    public async Task<WordListHeaderInfo> GetWordListHeaderAsync(Guid id)
+    {
+        var wordList = await _wordListRepository.GetWordListAsync(id);
+        return new WordListHeaderInfo(wordList.Id, wordList.Name, 0);
+    }
+
+    public async Task<IReadOnlyList<WordListHeaderInfo>> GetWordListHeadersAsync(
+        int pageNumber, int pageSize)
+    {
+        var headers = await _wordListRepository.GetWordListsAsync(
+            new WordListsSpec { PageNumber = pageNumber, PageSize = pageSize });
+
+        return headers
+            .Select(x => new WordListHeaderInfo(x.Id, x.Name, 0))
+            .ToImmutableArray();
     }
 
     public async Task<WordListInfo> GetWordListAsync(Guid id)

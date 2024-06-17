@@ -1,5 +1,4 @@
-﻿
-using Owl.WpfApp.Windows.Main.Parts;
+﻿using Owl.WpfApp.Windows.Main.Parts;
 
 namespace Owl.WpfApp;
 

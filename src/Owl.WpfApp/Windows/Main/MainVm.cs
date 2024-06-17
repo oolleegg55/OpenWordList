@@ -3,6 +3,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
+using Owl.CoreApplication;
 using Owl.WpfApp.Navigation;
 using Owl.WpfApp.Windows.CreateNewWordList;
 using Owl.WpfApp.Windows.Main.Parts;
@@ -13,19 +14,28 @@ internal partial class MainVm : WindowViewModelBase, IDisposable
 {
     private readonly ViewModelFactory _viewModelFactory;
     private readonly NavigationManager _navigationManager;
+    private readonly OwlCoreAppApi _api;
 
     private readonly Dictionary<Guid, WordListItemDetailsVm> _wordListDetailsCache = new();
 
-    public MainVm(ViewModelFactory viewModelFactory, NavigationManager navigationManager)
+    public MainVm(
+        ViewModelFactory viewModelFactory,
+        NavigationManager navigationManager,
+        OwlCoreAppApi api)
     {
         _viewModelFactory = viewModelFactory;
         _navigationManager = navigationManager;
+        _api = api;
     }
 
-    public override void OnInitialized()
+    public override async void OnInitialized()
     {
-        WordLists.Add(new WordListItemVm(Guid.NewGuid(), "My List 1"));
-        WordLists.Add(new WordListItemVm(Guid.NewGuid(), "My List 2"));
+        var headers = await _api.GetWordListHeadersAsync(pageNumber: 0, pageSize: 10);
+
+        foreach (var header in headers)
+        {
+            WordLists.Add(new WordListItemVm(header.Id, header.Name));
+        }
     }
 
     public ObservableCollection<WordListItemVm> WordLists { get; } = new();

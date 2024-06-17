@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Owl.Domain\Owl.Domain.csproj" />
+    <ProjectReference Include="..\Owl.Infrastructure\Owl.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

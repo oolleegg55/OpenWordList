@@ -1,4 +1,4 @@
-﻿namespace Owl.Application.ViewModels;
+﻿namespace Owl.CoreApplication.ViewModels;
 
 public record class CreateWordRequest(
     Guid WordListId,

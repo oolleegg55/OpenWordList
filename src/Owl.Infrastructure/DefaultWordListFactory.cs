@@ -1,9 +1,9 @@
 ﻿using Owl.Domain;
 using Owl.Domain.Model;
 
-namespace Owl.Application.Factories;
+namespace Owl.Infrastructure;
 
-public class WordListFactory : IWordListFactory
+public class DefaultWordListFactory : IWordListFactory
 {
     public WordList CreateWordList(string name)
     {
